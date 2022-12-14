@@ -30,7 +30,7 @@
         <div class="chat">
             <!-- TODO: loop over the messages and display them -->
             {#each chat as message}
-            <article>
+            <article class:user={message.user === "user"} class:eliza={message.user === "eliza"}>
                 <span>
                     {message.text}
                 </span>
@@ -70,5 +70,14 @@
         overflow: auto;
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .eliza {
+        background-color: rgb(23, 30, 37);
+    }
+
+    .user {
+        background-color: rgb(32, 38, 45);
+        text-align: right;
     }
   </style>
